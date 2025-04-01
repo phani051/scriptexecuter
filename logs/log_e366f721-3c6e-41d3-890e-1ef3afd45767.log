@@ -1,0 +1,19 @@
+
+Disabling policies...
+[#####                                             ] 10%[##########                                        ] 20%[###############                                   ] 30%[####################                              ] 40%[#########################                         ] 50%[##############################                    ] 60%[###################################               ] 70%
+Policy disabling completed.
+
+Validating policies...
+[#####                                             ] 10%[##########                                        ] 20%[###############                                   ] 30%[####################                              ] 40%[#########################                         ] 50%[##############################                    ] 60%[###################################               ] 70%
+Policy validation completed.
+
+Script execution completed successfully!
+
+Consolidated Policy Validation Results:
+Policy:  - 
+Policy: flth091_fs - 
+Policy: flth095_fs - 
+Policy:  - 
+Policy:  - 
+Policy: flth105_fs - 
+Policy: flth106_fs - 

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Script Execution Logs</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body {
+        background-color: #000;
+        color: #fff;
+    }
+    .navbar-custom {
+        background-color: #000;
+        border-bottom: 2px solid #9370DB;
+    }
+    .card {
+        background-color: #111;
+        border: 1px solid #9370DB;
+        box-shadow: 0 0 15px rgba(147, 112, 219, 0.2);
+        color: #fff;
+    }
+    .btn-primary, .btn-outline-secondary {
+        background-color: #9370DB;
+        border-color: #9370DB;
+        color: #fff;
+        font-weight: bold;
+    }
+    .btn-primary:hover, .btn-outline-secondary:hover {
+        background-color: #7a60c0;
+        border-color: #7a60c0;
+        color: #fff;
+    }
+    pre {
+        background-color: #000;
+        color: #0f0;
+        padding: 15px;
+        border: 1px solid #9370DB;
+        border-radius: 10px;
+        height: 500px;
+        overflow-y: auto;
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+    }
+    .visible {
+        opacity: 1;
+    }
+    .spinner-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    .dxc-spinner {
+        width: 80px;
+        height: 80px;
+        animation: spin 2s linear infinite;
+        margin-bottom: 10px;
+    }
+</style>
+<script>
+    let intervalId;
+    let firstLoad = true;
+
+    function fetchLogs() {
+        fetch(`/logs/live?log={{ log_file }}`)
+            .then(response => response.text())
+            .then(data => {
+                const preElement = document.getElementById('logOutput');
+                const spinnerElement = document.getElementById('spinner');
+                if (data.trim() !== "" && firstLoad) {
+                    spinnerElement.style.display = 'none';
+                    preElement.classList.add('visible');
+                    firstLoad = false;
+                }
+                preElement.innerText = data;
+                preElement.scrollTop = preElement.scrollHeight;
+                if (data.includes("=== Script execution completed ===")) {
+                    clearInterval(intervalId);
+                }
+            });
+    }
+
+    window.onload = function () {
+        intervalId = setInterval(fetchLogs, 1000);
+        fetchLogs();
+    };
+</script>
+</head>
+<body>
+<nav class="navbar navbar-dark navbar-custom mb-4 p-2">
+<div class="container-fluid">
+<a class="navbar-brand" href="#">
+<img src="https://dxc.com/content/dam/dxc/projects/dxc-com/us/images/about-us/newsroom/logos-for-media/vertical/DXC%20Logo_Purple+Black%20RGB.png" alt="DXC Technology" height="50">
+</a>
+</div>
+</nav>
+
+<div class="container mt-3">
+<div class="card shadow p-4">
+<h2 class="mb-4 text-center">Live Script Execution Logs</h2>
+<div class="text-center my-4 spinner-container" id="spinner">
+<svg class="dxc-spinner" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="40" stroke="#9370DB" stroke-width="8" fill="none" stroke-linecap="round"/>
+<circle cx="50" cy="50" r="40" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="62.8" stroke-dashoffset="62.8">
+  <animate attributeName="stroke-dashoffset" values="62.8;0" dur="2s" repeatCount="indefinite" />
+</circle>
+</svg>
+<p class="text-muted">Loading script output, please wait...</p>
+</div>
+<pre id="logOutput"></pre>
+<div class="text-center mt-4">
+<a href="/" class="btn btn-outline-secondary">Back to Home</a>
+<a href="/download_log?log={{ log_file }}" class="btn btn-primary ms-3">Download Log</a>
+</div>
+</div>
+</div>
+</body>
+</html>
+

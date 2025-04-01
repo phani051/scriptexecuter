@@ -1,0 +1,14 @@
+
+Disabling policies...
+[#####                                             ] 10%[##########                                        ] 20%[###############                                   ] 30%[####################                              ] 40%
+Policy disabling completed.
+
+Validating policies...
+Active:			no
+[#####                                             ] 10%Active:			no
+[##########                                        ] 20%Active:			no
+[###############                                   ] 30%Active:			no
+[####################                              ] 40%
+Policy validation completed.
+
+[1;32mScript execution completed successfully![0m

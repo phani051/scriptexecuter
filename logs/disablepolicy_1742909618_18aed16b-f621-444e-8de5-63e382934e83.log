@@ -17,7 +17,6 @@ AND OPEN A TICKET
 TO REPORT A SEV 1 OUTAGE CALL THE ITO SERVICE DESK at 877-448-6767
 
 
-Connection to tlph101.dadc.sbc.com closed.
    _________________________________________________________________
 
     This system is restricted to AT&T authorized users for business
@@ -37,7 +36,6 @@ AND OPEN A TICKET
 TO REPORT A SEV 1 OUTAGE CALL THE ITO SERVICE DESK at 877-448-6767
 
 
-Connection to tlph101.dadc.sbc.com closed.
    _________________________________________________________________
 
     This system is restricted to AT&T authorized users for business
@@ -57,7 +55,6 @@ AND OPEN A TICKET
 TO REPORT A SEV 1 OUTAGE CALL THE ITO SERVICE DESK at 877-448-6767
 
 
-Connection to tlph101.dadc.sbc.com closed.
    _________________________________________________________________
 
     This system is restricted to AT&T authorized users for business
@@ -77,7 +74,13 @@ AND OPEN A TICKET
 TO REPORT A SEV 1 OUTAGE CALL THE ITO SERVICE DESK at 877-448-6767
 
 
-Connection to tlph101.dadc.sbc.com closed.
+tlph11138_fs Active:			no
+tlph11733_fs Active:			no
+tlph11819_fs Active:			no
+tlph11821_fs Active:			no
+Execution started at Tue Mar 25 09:33:38 EDT 2025
+Disabling policies based on target file...
+Running on tlph101.dadc.sbc.com: sudo /usr/openv/netbackup/bin/admincmd/bpplinfo tlph11138_fs -modify -inactive -keyword 'Migrated to Networker as per CHG000009910597' -M tlph101.dadc.sbc.com
    _________________________________________________________________
 
     This system is restricted to AT&T authorized users for business
@@ -97,7 +100,7 @@ AND OPEN A TICKET
 TO REPORT A SEV 1 OUTAGE CALL THE ITO SERVICE DESK at 877-448-6767
 
 
-Connection to tlph101.dadc.sbc.com closed.
+Running on tlph101.dadc.sbc.com: sudo /usr/openv/netbackup/bin/admincmd/bpplinfo tlph11733_fs -modify -inactive -keyword 'Migrated to Networker as per CHG000009910597' -M tlph101.dadc.sbc.com
    _________________________________________________________________
 
     This system is restricted to AT&T authorized users for business
@@ -117,7 +120,7 @@ AND OPEN A TICKET
 TO REPORT A SEV 1 OUTAGE CALL THE ITO SERVICE DESK at 877-448-6767
 
 
-Connection to tlph101.dadc.sbc.com closed.
+Running on tlph101.dadc.sbc.com: sudo /usr/openv/netbackup/bin/admincmd/bpplinfo tlph11819_fs -modify -inactive -keyword 'Migrated to Networker as per CHG000009910597' -M tlph101.dadc.sbc.com
    _________________________________________________________________
 
     This system is restricted to AT&T authorized users for business
@@ -137,7 +140,7 @@ AND OPEN A TICKET
 TO REPORT A SEV 1 OUTAGE CALL THE ITO SERVICE DESK at 877-448-6767
 
 
-Connection to tlph101.dadc.sbc.com closed.
+Running on tlph101.dadc.sbc.com: sudo /usr/openv/netbackup/bin/admincmd/bpplinfo tlph11821_fs -modify -inactive -keyword 'Migrated to Networker as per CHG000009910597' -M tlph101.dadc.sbc.com
    _________________________________________________________________
 
     This system is restricted to AT&T authorized users for business
@@ -157,8 +160,9 @@ AND OPEN A TICKET
 TO REPORT A SEV 1 OUTAGE CALL THE ITO SERVICE DESK at 877-448-6767
 
 
-Connection to tlph101.dadc.sbc.com closed.
-tlph11138_fs Active: no
-tlph11733_fs Active: no
-tlph11819_fs Active: no
-tlph11821_fs Active: no
+Checking policy statuses...
+Checked tlph11138_fs on tlph101.dadc.sbc.com
+Checked tlph11733_fs on tlph101.dadc.sbc.com
+Checked tlph11819_fs on tlph101.dadc.sbc.com
+Checked tlph11821_fs on tlph101.dadc.sbc.com
+Execution completed at Tue Mar 25 09:34:34 EDT 2025

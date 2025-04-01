@@ -1,0 +1,14 @@
+
+Disabling policies...
+[#####                                             ] 10%[##########                                        ] 20%[###############                                   ] 30%[####################                              ] 40%
+Policy disabling completed.
+
+Validating policies...
+Policy: tlph11138_fs - Active:			no
+[#####                                             ] 10%Policy: tlph11733_fs - Active:			no
+[##########                                        ] 20%Policy: tlph11819_fs - Active:			no
+[###############                                   ] 30%Policy: tlph11821_fs - Active:			no
+[####################                              ] 40%
+Policy validation completed.
+
+[1;32mScript execution completed successfully![0m

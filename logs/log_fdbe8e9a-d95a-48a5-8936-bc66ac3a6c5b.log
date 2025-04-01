@@ -1,0 +1,13 @@
+
+Disabling policies...
+[#####                                             ] 10%
+Policy disabling completed.
+
+Validating policies...
+[#####                                             ] 10%
+Policy validation completed.
+
+Script execution completed successfully!
+
+Consolidated Policy Validation Results:
+Policy: fltd10272_fs - Active:			no

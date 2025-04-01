@@ -1,0 +1,17 @@
+
+Disabling policies...
+[#####                                             ] 10%[##########                                        ] 20%[###############                                   ] 30%[####################                              ] 40%[#########################                         ] 50%
+Policy disabling completed.
+
+Validating policies...
+[#####                                             ] 10%[##########                                        ] 20%[###############                                   ] 30%[####################                              ] 40%[#########################                         ] 50%
+Policy validation completed.
+
+Script execution completed successfully!
+
+Consolidated Policy Validation Results:
+Policy: flth123_fs - Active:                 no on fsprd448.ffdc.sbc.com
+Policy: flth133_fs - Active:                 no on fsprd448.ffdc.sbc.com
+Policy: flth156_fs - Active:                 no on fsprd448.ffdc.sbc.com
+Policy: flth157_fs - Active:                 no on fsprd448.ffdc.sbc.com
+Policy: flth205_fs - Active:			no on flpd633.ffdc.sbc.com

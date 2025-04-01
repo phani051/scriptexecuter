@@ -1,0 +1,11 @@
+Disabling policies...
+[#####                                             ] 10%[##########                                        ] 20%[###############                                   ] 30%[####################                              ] 40%
+Policy disabling completed.
+Validating policies...
+[#####                                             ] 10%[##########                                        ] 20%[###############                                   ] 30%[####################                              ] 40%
+Policy validation completed.
+tlph11138_fs status on tlph101.dadc.sbc.com: Policy tlph11138_fs is inactive or not found on tlph101.dadc.sbc.com
+tlph11733_fs status on tlph101.dadc.sbc.com: Policy tlph11733_fs is inactive or not found on tlph101.dadc.sbc.com
+tlph11819_fs status on tlph101.dadc.sbc.com: Policy tlph11819_fs is inactive or not found on tlph101.dadc.sbc.com
+tlph11821_fs status on tlph101.dadc.sbc.com: Policy tlph11821_fs is inactive or not found on tlph101.dadc.sbc.com
+Script execution completed.

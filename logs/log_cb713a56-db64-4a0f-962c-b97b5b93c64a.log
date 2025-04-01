@@ -1,0 +1,16 @@
+
+Disabling policies...
+[#####                                             ] 10%[##########                                        ] 20%[###############                                   ] 30%[####################                              ] 40%
+Policy disabling completed.
+
+Validating policies...
+[#####                                             ] 10%[##########                                        ] 20%[###############                                   ] 30%[####################                              ] 40%
+Policy validation completed.
+
+Script execution completed successfully!
+
+Consolidated Policy Validation Results:
+Policy: olth111_fs - Active:			no
+Policy: olth115_fs - Active:			no
+Policy: olth116_fs - Active:			no
+Policy: olth117_fs - Active:			no

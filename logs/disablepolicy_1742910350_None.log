@@ -158,7 +158,8 @@ TO REPORT A SEV 1 OUTAGE CALL THE ITO SERVICE DESK at 877-448-6767
 
 
 Connection to tlph101.dadc.sbc.com closed.
-tlph11138_fs Active: no
-tlph11733_fs Active: no
-tlph11819_fs Active: no
-tlph11821_fs Active: no
+Policy Status Output
+tlph11138_fs Active:			no
+tlph11733_fs Active:			no
+tlph11819_fs Active:			no
+tlph11821_fs Active:			no

@@ -1,0 +1,30 @@
+
+Disabling policies...
+[#####                                             ] 10%[#####                                             ] 10%[##########                                        ] 20%[##########                                        ] 20%[###############                                   ] 30%[###############                                   ] 30%[####################                              ] 40%
+Policy disabling completed.
+
+Validating policies...
+[####################                              ] 40%
+Policy disabling completed.
+
+Validating policies...
+[#####                                             ] 10%[#####                                             ] 10%[##########                                        ] 20%[##########                                        ] 20%[###############                                   ] 30%[###############                                   ] 30%[####################                              ] 40%
+Policy validation completed.
+
+Script execution completed successfully!
+
+Consolidated Policy Validation Results:
+Policy: olpv1984_fs - Active:			no
+Policy: olpv1985_fs - Active:			no
+Policy: olpv1986_fs - Active:			no
+Policy: olpv1987_fs - Active:			no
+[####################                              ] 40%
+Policy validation completed.
+
+Script execution completed successfully!
+
+Consolidated Policy Validation Results:
+Policy: olpv1984_fs - Active:			no
+Policy: olpv1985_fs - Active:			no
+Policy: olpv1986_fs - Active:			no
+Policy: olpv1987_fs - Active:			no

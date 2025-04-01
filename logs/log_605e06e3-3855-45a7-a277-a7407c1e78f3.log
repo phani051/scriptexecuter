@@ -1,0 +1,19 @@
+
+Disabling policies...
+[#####                                             ] 10%[##########                                        ] 20%[###############                                   ] 30%[####################                              ] 40%[#########################                         ] 50%[##############################                    ] 60%[###################################               ] 70%
+Policy disabling completed.
+
+Validating policies...
+[#####                                             ] 10%[##########                                        ] 20%[###############                                   ] 30%[####################                              ] 40%[#########################                         ] 50%[##############################                    ] 60%[###################################               ] 70%
+Policy validation completed.
+
+Script execution completed successfully!
+
+Consolidated Policy Validation Results:
+Policy: fltd10272_fs - Active:			no
+Policy: flth091_fs - Active:                 no
+Policy: flth095_fs - Active:                 no
+Policy: flth10227_fs - Active:			no
+Policy: flth10228_fs - Active:			no
+Policy: flth105_fs - Active:                 no
+Policy: flth106_fs - Active:                 no

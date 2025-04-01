@@ -1,0 +1,19 @@
+
+Disabling policies...
+[#####                                             ] 10%[##########                                        ] 20%[###############                                   ] 30%[####################                              ] 40%[#########################                         ] 50%[##############################                    ] 60%[###################################               ] 70%
+Policy disabling completed.
+
+Validating policies...
+[#####                                             ] 10%[##########                                        ] 20%[###############                                   ] 30%[####################                              ] 40%[#########################                         ] 50%[##############################                    ] 60%[###################################               ] 70%
+Policy validation completed.
+
+Script execution completed successfully!
+
+Consolidated Policy Validation Results:
+Policy:  - Inactive or not found on fltd10272_fs CHG000009936754
+Policy: flth091_fs - Inactive or not found on fsprd448.ffdc.sbc.com 
+Policy: flth095_fs - Inactive or not found on fsprd448.ffdc.sbc.com 
+Policy:  - Inactive or not found on flth10227_fs CHG000009936754
+Policy:  - Inactive or not found on flth10228_fs CHG000009936754
+Policy: flth105_fs - Inactive or not found on fsprd448.ffdc.sbc.com 
+Policy: flth106_fs - Inactive or not found on fsprd448.ffdc.sbc.com 

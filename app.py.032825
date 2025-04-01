@@ -26,7 +26,7 @@ def clean_old_logs():
 @app.route('/')
 def home():
     session_id = str(uuid.uuid4())
-    scripts = [f for f in os.listdir(SCRIPTS_DIR) ]
+    scripts = [f for f in os.listdir(SCRIPTS_DIR) if f.endswith('.sh')]
     return render_template('home.html', scripts=scripts, session_id=session_id)
 
 @app.route('/run', methods=['POST'])

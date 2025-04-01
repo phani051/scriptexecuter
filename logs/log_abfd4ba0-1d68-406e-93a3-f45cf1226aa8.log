@@ -1,0 +1,5 @@
+./scripts/socatalystmonitor.py: line 2: import: command not found
+./scripts/socatalystmonitor.py: line 3: import: command not found
+./scripts/socatalystmonitor.py: line 4: import: command not found
+./scripts/socatalystmonitor.py: line 8: syntax error near unexpected token `'/home/pr0488/socatalystmonitor/getjson.sh''
+./scripts/socatalystmonitor.py: line 8: `os.system('/home/pr0488/socatalystmonitor/getjson.sh')'
