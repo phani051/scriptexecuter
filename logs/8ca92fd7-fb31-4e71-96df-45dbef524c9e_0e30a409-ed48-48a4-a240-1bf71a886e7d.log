@@ -1,0 +1,6 @@
+alph658-nebr.aldc.att.com | Yes | zlpy37674.vci.att.com | afphsor04nebraftdfsprodbackuppool.001 adv_file alph658-nebr.aldc.att.com 06/02/2025 10:00:38 PM 4  B 658396998 cb 1 /opt/tools/sentinelone/ebpfs/bpf_mount
+alph659-nebr.aldc.att.com | Yes | zlpy37674.vci.att.com | afphsor04nebraftdfsprodbackuppool.006 adv_file alph659-nebr.aldc.att.com 06/03/2025 12:15:03 AM 10 GB 1245607628 cb 1 /opt/app/edb
+alph660-nebr.aldc.att.com | Yes | zlpy37674.vci.att.com | afphsor04nebraftdfsprodbackuppool.004 adv_file alph660-nebr.aldc.att.com 06/03/2025 12:15:32 AM 2267 KB 591296228 cb 1 /opt/sentinelone/rpm_mount
+alph662-nebr.aldc.att.com | Yes | zlpy37674.vci.att.com | afphsor04nebraftdfsprodbackuppool.003 adv_file alph662-nebr.aldc.att.com 06/02/2025 10:01:18 PM 488 MB 2302564206 cb 1 /opt/tools
+alph663-nebr.aldc.att.com | Yes | zlpy37674.vci.att.com | afphsor04nebraftdfsprodbackuppool.001 adv_file alph663-nebr.aldc.att.com 06/02/2025 10:00:13 PM 2261 KB 1883133741 cb 1 /opt/tools/sentinelone/rpm_mount
+✅ All clients in the list have been processed

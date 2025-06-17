@@ -1,0 +1,5 @@
+tlpd284-nebr.dadc.sbc.com	tlph102.dadc.sbc.com	tlpd284_fs	CHG000009847316
+tlph098-nebr.dadc.sbc.com	tsprd653.dadc.sbc.com	tlph098	CHG000009847316
+tlph11138-nebr.dadc.sbc.com	tlph101.dadc.sbc.com	tlph11138_fs	CHG000009910597
+tlph11733-nebr.dadc.sbc.com	tlph101.dadc.sbc.com	tlph11733_fs	CHG000009910597
+tlph11819-nebr.dadc.sbc.com	tlph101.dadc.sbc.com	tlph11819_fs	CHG000009910597

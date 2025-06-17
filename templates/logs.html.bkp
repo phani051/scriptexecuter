@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DXC Script Executor Portal - Logs</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body.dark-mode {
+        background-color: #000 !important;
+        color: #00ff00 !important;
+    }
+    .navbar-custom {
+        background-color: #ffffff;
+        border-bottom: 2px solid #ccc;
+    }
+    body.dark-mode .navbar-custom {
+        background-color: #000000;
+        border-bottom: 2px solid #00ff00;
+    }
+    pre {
+        background-color: #000000;
+        color: #00ff00;
+        padding: 15px;
+        border-radius: 5px;
+        max-height: 500px;
+        overflow-y: auto;
+        font-family: monospace;
+        font-size: 14px;
+        position: relative;
+    }
+    #cursor {
+        display: inline-block;
+        width: 8px;
+        height: 16px;
+        background-color: #00ff00;
+        margin-left: 3px;
+        animation: blink 1s step-start infinite;
+        vertical-align: bottom;
+    }
+    @keyframes blink {
+        50% { opacity: 0; }
+    }
+    .toggle-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+    .progress-bar-container {
+        width: 100%;
+        height: 5px;
+        margin-top: 10px;
+        background: #222;
+        overflow: hidden;
+        border-radius: 2px;
+    }
+    .progress-bar-stripes {
+        width: 200%;
+        height: 100%;
+        background: linear-gradient(135deg, #00ff00 25%, transparent 25%, transparent 50%, #00ff00 50%, #00ff00 75%, transparent 75%, transparent);
+        background-size: 40px 40px;
+        animation: moveStripes 1s linear infinite;
+    }
+    @keyframes moveStripes {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-40px); }
+    }
+    .spinner-border {
+        width: 20px;
+        height: 20px;
+        margin-left: 10px;
+        color: #00ff00;
+        vertical-align: text-bottom;
+    }
+</style>
+<script>
+    let autoRefresh = true;
+    const startAudio = new Audio("https://actions.google.com/sounds/v1/alarms/beep_short.ogg");
+    const completeAudio = new Audio("https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg");
+
+    function fetchLogs() {
+        if (!autoRefresh) return;
+        fetch(`/logs/live?log={{ log_file }}`)
+            .then(response => response.text())
+            .then(data => {
+                const logContent = document.getElementById('logContent');
+                logContent.textContent = data;
+                logContent.scrollTop = logContent.scrollHeight;
+
+                if (data.includes('Script execution completed')) {
+                    autoRefresh = false;
+                    document.getElementById('statusMessage').innerText = "✅ Script execution completed!";
+                    document.getElementById('cursor').style.display = 'none';
+                    document.getElementById('progressBarContainer').style.display = 'none';
+                    document.getElementById('spinner').style.display = 'none';
+                    completeAudio.play();
+                } else {
+                    setTimeout(fetchLogs, 1000);
+                }
+            });
+    }
+
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+    }
+
+    window.onload = function() {
+        startAudio.play();
+        fetchLogs();
+    };
+</script>
+</head>
+<body class="bg-light dark-mode">
+<nav class="navbar navbar-light navbar-custom mb-4 p-2">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="https://dxc.com/content/dam/dxc/projects/dxc-com/us/images/about-us/newsroom/logos-for-media/vertical/DXC%20Logo_Purple+Black%20RGB.png" alt="DXC Technology" height="50">
+        </a>
+    </div>
+</nav>
+
+<button class="btn btn-outline-success toggle-btn" onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
+
+<div class="container mt-3">
+    <div class="card shadow p-4 mb-4">
+        <h2 class="mb-4 text-center">Live Script Execution Logs</h2>
+        <p id="statusMessage" class="text-center text-primary fw-bold"></p>
+        <pre id="logContent">Loading log output...</pre>
+        <span id="cursor"></span>
+        <div class="text-center mt-2">
+            <div id="progressBarContainer" class="progress-bar-container">
+                <div class="progress-bar-stripes"></div>
+            </div>
+            <div id="spinner" class="spinner-border" role="status"></div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('download_log', log=log_file) }}" class="btn btn-success me-2">Download Log</a>
+            <a href="/" class="btn btn-secondary">Back to Home</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

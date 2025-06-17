@@ -1,0 +1,16 @@
+
+Disabling policies...
+[############                                      ] 25%[#########################                         ] 50%[#####################################             ] 75%[##################################################] 100%
+Policy disabling completed.
+
+Validating policies...
+[############                                      ] 25%[#########################                         ] 50%[#####################################             ] 75%[##################################################] 100%
+Policy validation completed.
+
+Script execution completed successfully!
+
+Consolidated Policy Validation Results:
+Policy: tlph12817_fs - Active:			no on tlph101.dadc.sbc.com
+Policy: tlph12818_fs - Active:			no on tlph101.dadc.sbc.com
+Policy: tlph12819_fs - Active:			no on tlph101.dadc.sbc.com
+Policy: tlth016_fs - Active:			no on tlph102.dadc.sbc.com

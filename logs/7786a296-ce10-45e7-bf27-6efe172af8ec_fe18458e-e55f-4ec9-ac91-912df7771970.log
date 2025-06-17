@@ -1,0 +1,17 @@
+
+Disabling policies...
+[##########                                        ] 20%[####################                              ] 40%[##############################                    ] 60%[########################################          ] 80%[##################################################] 100%
+Policy disabling completed.
+
+Validating policies...
+[##########                                        ] 20%[####################                              ] 40%[##############################                    ] 60%[########################################          ] 80%[##################################################] 100%
+Policy validation completed.
+
+Script execution completed successfully!
+
+Consolidated Policy Validation Results:
+Policy: tlpd284_fs - Active:			no on tlph102.dadc.sbc.com
+Policy: tlph098 - Active:                 no on tsprd653.dadc.sbc.com
+Policy: tlph11138_fs - Active:			no on tlph101.dadc.sbc.com
+Policy: tlph11733_fs - Active:			no on tlph101.dadc.sbc.com
+Policy: tlph11819_fs - Active:			no on tlph101.dadc.sbc.com

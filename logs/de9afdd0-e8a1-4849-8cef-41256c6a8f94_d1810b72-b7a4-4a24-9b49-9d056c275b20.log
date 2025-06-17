@@ -1,0 +1,14 @@
+
+Disabling policies...
+./scripts/disablepolicy.sh: line 45: $1: ambiguous redirect
+
+Policy disabling completed.
+
+Validating policies...
+./scripts/disablepolicy.sh: line 73: $1: ambiguous redirect
+
+Policy validation completed.
+
+Script execution completed successfully!
+
+Consolidated Policy Validation Results:

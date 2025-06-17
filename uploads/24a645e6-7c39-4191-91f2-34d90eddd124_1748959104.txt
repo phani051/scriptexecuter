@@ -1,0 +1,4 @@
+tlph12817-nebr.dadc.sbc.com	tlph101.dadc.sbc.com	tlph12817_fs	CHG000009910597
+tlph12818-nebr.dadc.sbc.com	tlph101.dadc.sbc.com	tlph12818_fs	CHG000009910597
+tlph12819-nebr.dadc.sbc.com	tlph101.dadc.sbc.com	tlph12819_fs	CHG000009910597
+tlth016-nebr.dadc.sbc.com	tlph102.dadc.sbc.com	tlth016_fs	CHG000009847316

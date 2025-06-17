@@ -1,0 +1,16 @@
+
+Disabling policies...
+./scripts/disablepolicy.sh: line 33: : No such file or directory
+./scripts/disablepolicy.sh: line 34: 3: Bad file descriptor
+
+Policy disabling completed.
+
+Validating policies...
+./scripts/disablepolicy.sh: line 57: : No such file or directory
+./scripts/disablepolicy.sh: line 58: 3: Bad file descriptor
+
+Policy validation completed.
+
+Script execution completed successfully!
+
+Consolidated Policy Validation Results:

@@ -1,0 +1,84 @@
+#!/bin/bash
+
+# Function to print a cleaner, modern progress bar
+progress_bar() {
+    local progress=$1
+    local width=50  # Width of the progress bar
+    local filled=$((progress * width / 100))
+    local empty=$((width - filled))
+    local bar=""
+    
+    for ((i=0; i<filled; i++)); do
+        bar+="#"
+    done
+    for ((i=0; i<empty; i++)); do
+        bar+=" "
+    done
+
+    # Display progress bar with the percentage and the animated effect
+    echo -ne "\r[${bar}] $progress%"
+}
+
+# Initialize
+total_steps=10  # Set to the number of policies being processed
+current_step=0
+
+# Create a temporary file to store results
+result_file=$(mktemp)
+
+# First part: Disabling policies
+echo -e "\nDisabling policies..."
+
+while read -r line; do
+    master=$(echo $line | awk '{print $2}')
+    policy=$(echo $line | awk '{print $3}')
+    cr=$(echo $line | awk '{print $4}')
+ 
+    abcd="sudo /usr/openv/netbackup/bin/admincmd/bpplinfo $policy -modify -inactive -keyword 'Migrated to Networker as per $cr ' -M $master"
+    # Suppress SSH output by redirecting both stdout and stderr to /dev/null
+    ssh -t -t -o StrictHostKeyChecking=no $master "${abcd}" < /dev/null > /dev/null 2>&1
+
+    # Update progress bar after disabling each policy
+    current_step=$((current_step + 1))
+    progress_bar $((current_step * 100 / total_steps))
+    sleep 0.5  # Small delay to make the progress bar visible
+done < $1
+
+echo -e "\nPolicy disabling completed."
+
+# Second part: Validating policies
+echo -e "\nValidating policies..."
+
+current_step=0  # Reset progress for validation
+
+# Only output the result of the validation command
+while read -r line; do
+    master=$(echo $line | awk '{print $2}')
+    policy=$(echo $line | awk '{print $3}')
+ 
+    # Get the policy status and suppress SSH output
+    output=$(ssh -t -t -o StrictHostKeyChecking=no $master "sudo /opt/openv/netbackup/bin/admincmd/bpplinfo $policy -L | grep 'Active'" < /dev/null 2>/dev/null)
+
+    # Only output if there is any result (i.e., Active policy status)
+    if [[ -n "$output" ]]; then
+        echo "Policy: $policy - $output on $master" >> "$result_file"
+    else
+        echo "Policy: $policy - $output on $master" >> "$result_file"
+    fi
+
+    # Update progress bar for validation
+    current_step=$((current_step + 1))
+    progress_bar $((current_step * 100 / total_steps))
+    sleep 0.5  # Small delay to make progress visible
+done < $1
+
+echo -e "\nPolicy validation completed."
+
+# Final message
+echo -e "\nScript execution completed successfully!"
+
+# Display consolidated results
+echo -e "\nConsolidated Policy Validation Results:"
+cat "$result_file"
+rm "$result_file"  # Clean up the temporary file
+

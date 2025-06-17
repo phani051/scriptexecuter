@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DXC Script Executor Portal</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body {
+        background-color: #000;
+        color: #fff;
+    }
+    .navbar-custom {
+        background-color: #000;
+        border-bottom: 2px solid #ccc;
+    }
+    .card {
+        background-color: #1a1a1a;
+        border: 1px solid #333;
+    }
+    .btn-primary {
+        background-color: #7f5fcf;
+        border: none;
+    }
+    .btn-primary:hover {
+        background-color: #9d7ef2;
+    }
+    .form-select, .form-control {
+        background-color: #333;
+        color: #fff;
+        border: 1px solid #555;
+    }
+    label, h2 {
+        color: #dcdcdc;
+    }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-light navbar-custom mb-4 p-2">
+<div class="container-fluid">
+<a class="navbar-brand" href="#">
+<img src="https://dxc.com/content/dam/dxc/projects/dxc-com/us/images/about-us/newsroom/logos-for-media/vertical/DXC%20Logo_Purple+Black%20RGB.png" alt="DXC Technology" height="50">
+</a>
+</div>
+</nav>
+<div class="container mt-3">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+<div class="alert alert-info text-center text-dark bg-light">{{ messages[0] }}</div>
+      {% endif %}
+    {% endwith %}
+ 
+<div class="card shadow p-4 mb-4">
+<h2 class="mb-4 text-center">Script Executor Portal</h2>
+<form action="/run" method="post">
+<div class="mb-3">
+<label for="script" class="form-label">Choose a script:</label>
+<select name="script" id="script" class="form-select" onchange="toggleUpdateSection(this.value);" required>
+<option value="">Select a script</option>
+{% for script in scripts %}
+<option value="{{ script }}">{{ script }}</option>
+{% endfor %}
+</select>
+</div>
+<input type="hidden" name="session_id" value="{{ session_id }}">
+<button type="submit" class="btn btn-primary w-100">Run Selected Script</button>
+</form>
+</div>
+ 
+<div class="card shadow p-4" id="updateSection" style="display:none;">
+<h2 class="mb-4 text-center">Update File for disablepolicy.sh</h2>
+<p>Enter lines in the format: <code>client master_gpn policy CR</code></p>
+<form action="/update_file" method="post">
+<input type="hidden" name="session_id" value="{{ session_id }}">
+<div class="mb-3">
+<label class="form-label">Enter text to update:</label>
+<textarea name="file_content" class="form-control" rows="5" required></textarea>
+</div>
+<button type="submit" class="btn btn-primary w-100">Update File & Run</button>
+</form>
+</div>
+</div>
+ 
+<script>
+function toggleUpdateSection(script) {
+    const updateSection = document.getElementById('updateSection');
+    if (script === 'disablepolicy.sh') {
+        updateSection.style.display = 'block';
+    } else {
+        updateSection.style.display = 'none';
+    }
+}
+</script>
+</body>
+</html>
+
